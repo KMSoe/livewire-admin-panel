@@ -81,7 +81,6 @@
             <a
               href="{{ route('admin.about-us')}}"
               class="menu-link"
-              wire:navigate
               >
               <div data-i18n="About Us">About Us</div>
             </a>
