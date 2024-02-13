@@ -63,7 +63,7 @@
     <ul class="menu-inner py-1">
       <!-- Dashboards -->
       <li class="menu-item active open">
-        <a href="javascript:void(0);" class="menu-link">
+        <a href="{{ route('admin.dashboard') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Dashboards">Dashboards</div>
           <div class="badge bg-danger rounded-pill ms-auto">5</div>
@@ -75,15 +75,15 @@
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-store"></i>
           <div data-i18n="Front Pages">Front Pages</div>
-          <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
         </a>
         <ul class="menu-sub">
           <li class="menu-item">
             <a
-              href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/landing-page.html"
+              href="{{ route('admin.about-us')}}"
               class="menu-link"
-              target="_blank">
-              <div data-i18n="Landing">Landing</div>
+              wire:navigate
+              >
+              <div data-i18n="About Us">About Us</div>
             </a>
           </li>
           <li class="menu-item">

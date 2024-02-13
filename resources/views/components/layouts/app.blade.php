@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 
-<html
-  lang="en"
-  class="light-style layout-menu-fixed layout-compact"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="../assets/"
-  data-template="vertical-menu-template-free">
-  <head>
+<html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default"
+    data-assets-path="../assets/" data-template="vertical-menu-template-free">
+
+<head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
     <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
@@ -24,18 +19,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
 
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/fonts/boxicons.css') }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/css/core.css') }}"
+        class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/css/theme-default.css') }}"
+        class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/demo.css') }}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('admin_assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
 
     <!-- Page CSS -->
@@ -46,50 +44,30 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('admin_assets/assets/js/config.js') }}"></script>
-  </head>
+</head>
 
-  <body>
-    <!-- Layout wrapper -->
+<body>
+    
+
     <div class="layout-wrapper layout-content-navbar">
-      <div class="layout-container">
-        <!-- Menu -->
+        <div class="layout-container">
+            @include('admin.layouts.sidebar')
+            <div class="layout-page">
+           
 
-        @include('admin.layouts.sidebar')
-        <!-- / Menu -->
+                @include('admin.layouts.navbar')
 
-        <!-- Layout container -->
-        <div class="layout-page">
-          <!-- Navbar -->
+                <div class="content-wrapper">
+                    {{ $slot }}
+                    @include('admin.layouts.footer')
+                    <div class="content-backdrop fade"></div>
+                </div>
 
-          @include('admin.layouts.navbar')          
+            </div>
 
-          <!-- / Navbar -->
-
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-
-            @yield('content')
-            <!-- / Content -->
-
-            <!-- Footer -->
-            @include('admin.layouts.footer')      
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!-- Content wrapper -->
         </div>
-        <!-- / Layout page -->
-      </div>
-
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
-    <!-- / Layout wrapper -->
-
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div> 
 
     <script src="{{ asset('admin_assets/assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('admin_assets/assets/vendor/libs/popper/popper.js') }}"></script>
@@ -111,5 +89,6 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     @livewireScripts
-  </body>
+</body>
+
 </html>
